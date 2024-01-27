@@ -1,0 +1,313 @@
+BOOKS = [
+    {
+        "id": 1,
+        "title": "Harry Potter",
+        "url_name": "harry-potter",
+        "author": "J.K. Rowling",
+        "genres": ["Fantasy", "Adventure", "Mystery"],
+        "image_url": "https://bukovero.com/wp-content/uploads/2016/07/Harry_Potter_and_the_Cursed_Child_Special_Rehearsal_Edition_Book_Cover.jpg",
+        "description": """"Harry Potter" is a seven-book series that begins with "Harry Potter and the Philosopher's Stone" (or "Sorcerer's Stone" in the US) and follows Harry's journey from the moment he discovers he's a wizard, having lived with his neglectful aunt and uncle after the death of his parents.
+        At Hogwarts, Harry learns about his magical heritage, forms friendships, and faces various challenges, both academic and extraordinary. Throughout the series, he discovers his connection to the dark wizard Voldemort, who killed his parents and tried to kill him as a baby. This connection leads to the ultimate showdown between Harry and Voldemort.
+        The books are not just about magic; they explore themes like love, sacrifice, discrimination, and the choices between good and evil. The richness of the wizarding world, with its spells, creatures, and lore, has captivated readers worldwide. The characters, from the brave and loyal Hermione to the clumsy yet devoted Ron, are layered and relatable, making the series deeply engaging for readers of all ages.""",
+        "source": "google.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 2,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genres": ["Classic", "Romance", "Tragedy"],
+        "image_url": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982146702/the-great-gatsby-9781982146702_hr.jpg",
+        "description": "A story about the American Dream, love, and tragedy set in the roaring 1920s.",
+        "source": "amazon.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 4,
+        "title": "1984",
+        "author": "George Orwell",
+        "genres": ["Dystopian", "Political Fiction"],
+        "image_url": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71kxa1-0mfL._AC_UF1000,1000_QL80_.jpg",
+        "description": "A novel exploring a totalitarian society where individuality is suppressed.",
+        "source": "barnesandnoble.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 3,
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "genres": ["Fantasy", "Adventure", "Epic"],
+        "image_url": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
+        "description": "A tale of a young hobbit tasked with destroying a powerful ring to save Middle-earth.",
+        "source": "bookdepository.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 5,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genres": ["Classics", "Coming of Age", "Legal Drama"],
+        "image_url": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg",
+        "description": "A poignant story of racial injustice and moral growth in the American South.",
+        "source": "booksamillion.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 6,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genres": ["Classic", "Romance", "Satire"],
+        "image_url": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781499806250/pride-and-prejudice-9781499806250_hr.jpg",
+        "description": "A romantic comedy revolving around the lives of the Bennett sisters in Regency-era England.",
+        "source": "bookshop.org",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 7,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "genres": ["Classic", "Coming of Age"],
+        "image_url": "https://www.pluggedin.com/wp-content/uploads/2020/01/catcher-in-the-rye-cover-image-682x1024.jpeg",
+        "description": "Follows the story of Holden Caulfield, a disillusioned teenager navigating life in New York City.",
+        "source": "bookdepository.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 8,
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "genres": ["Fantasy", "Adventure"],
+        "image_url": "https://www.pluggedin.com/wp-content/uploads/2020/01/hobbit-cover.jpg",
+        "description": "An adventure of a hobbit named Bilbo Baggins as he journeys to reclaim treasure guarded by a dragon.",
+        "source": "amazon.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 9,
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "genres": ["Dystopian", "Science Fiction"],
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/6/62/BraveNewWorld_FirstEdition.jpg",
+        "description": "A novel portraying a futuristic society where technological advancement comes at a cost.",
+        "source": "barnesandnoble.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 10,
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "genres": ["Fiction", "Philosophical"],
+        "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
+        "description": "Follows a young shepherd on a journey to find his personal legend and fulfill his dreams.",
+        "source": "bookshop.org",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 11,
+        "title": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "genres": ["Dystopian", "Adventure"],
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/The_Hunger_Games_cover.jpg/220px-The_Hunger_Games_cover.jpg",
+        "description": "Set in a dystopian future, the story follows a young girl fighting for survival in a televised competition.",
+        "source": "booksamillion.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """
+    },
+    {
+        "id": 12,
+        "title": "The Girl on the Train",
+        "author": "Paula Hawkins",
+        "genres": ["Thriller", "Mystery"],
+        "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1574805682l/22557272.jpg",
+        "description": "A psychological thriller narrated by three women, each entangled in a gripping mystery.",
+        "source": "bookdepository.com",
+        "state": "Full",
+        "number_rating": 10,
+        "rating": 4,
+        "content":
+        """
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?
+        """,
+
+        "comment": []
+    }
+]
+
+
+def load_from_database(id=-1):
+    # id = int(id)
+    if id == -1:
+        return BOOKS
+    else:
+        for book in BOOKS:
+            if book["id"] == id:
+                return book
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

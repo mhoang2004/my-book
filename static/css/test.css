@@ -1,0 +1,81 @@
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    /* text-decoration: none; */
+    color: #000;
+}
+
+.book-info h3 {
+    font-size: 1.5rem;
+}
+
+.book-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.book-item:last-child {
+    border-bottom: none;
+}
+
+.book-item img {
+    object-fit: cover;
+}
+
+.book-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.book-wrapper img {
+    width: 200px;
+    height: 100px;
+}
+
+.book-text-something p {
+    font-size: 20px;
+}
+
+
+@media (max-width: 800px) {
+    .book-wrapper img {
+        width: 160px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 550px) {
+    .book-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .book-text-something p {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .book-wrapper img {
+        width: 140px;
+        height: 70px;
+    }
+
+    .book-info h3 {
+        font-size: 1rem;
+    }
+
+    .book-text-something p {
+        font-size: 13px;
+    }
+
+    .book-info span {
+        font-size: 13px;
+    }
+}

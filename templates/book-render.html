@@ -1,0 +1,66 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="container">
+    {% if render == "author" %}
+    {% set url_author = author %}
+    {% set author = books[0].authors[0] %}
+    <h3 class="mt-4">AUTHOR {{author | upper}}</h3>
+    <div class="url-pathname">
+        <a href="/" class="text-dark">
+            <i class="fa-solid fa-house" id="home-icon"></i>Home</a> /
+
+        <a href="/authors/{{url_author}}" class="text-dark">{{author}}</a>
+    </div>
+    {% else %}
+    {% set url_genre = genre %}
+    {% set genre = genre.replace("-", " ") | title %}
+    <h3 class="mt-4">BOOK GENRES: {{genre | upper}}</h3>
+    <div class="url-pathname">
+        <a href="/" class="text-dark">
+            <i class="fa-solid fa-house" id="home-icon"></i>Home</a> /
+        <a href="/genres/{{url_genre}}" class="text-dark">{{genre}}</a>
+    </div>
+    {% endif %}
+
+    <div class="book-container">
+
+        {% for book in books %}
+        <div class="book-item">
+            <div class="book-wrapper">
+                <img src="{{book.image_url}}" alt="book-cover">
+                <div class="book-info">
+                    <h3>
+                        <i class="fa-solid fa-book"></i>
+                        <a href="/">{{book.title}}</a>
+                    </h3>
+
+                    <span>
+                        <i class="fa-solid fa-pen"></i>
+                        {% for author in book.authors %}
+                        {{author}}{% if not loop.last%}, {%endif %}
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+            <div class="book-text-something">
+                <p class="">
+                    {% set book_rating = book.rating | round | int %}
+                    {%if book_rating == 5 %}
+                    {{"Excellent!"}}
+                    {% elif book_rating == 4 %}
+                    {{"Very Good!"}}
+                    {% elif book_rating == 3 %}
+                    {{"Good!"}}
+                    {% elif book_rating == 2 %}
+                    {{"Fair!"}}
+                    {% else %}
+                    {{"Poor!"}}
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

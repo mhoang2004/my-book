@@ -1,0 +1,23 @@
+/* Navbar */
+a.navbar-brand {
+    font-size: 1.8rem;
+    margin-right: 2rem;
+}
+
+.my-nav-item {
+    margin: auto 1rem;
+    border-radius: 0.7rem;
+}
+
+a.nav-link {
+    font-size: 1.3rem;
+}
+
+input.form-control {
+    border: 1px solid #000;
+}
+
+.form-control:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 0.2rem rgba(72, 74, 76, 0.25);
+}

@@ -1,0 +1,76 @@
+.banner {
+    width: 100%;
+    object-fit: cover;
+    height: 360px;
+}
+
+.book-title {
+    margin-top: .5rem;
+}
+
+.book-container {
+    margin-top: 3rem;
+}
+
+.book-container h2 {
+    margin: 2rem 0 1rem;
+}
+
+.hot-icon {
+    color: #FF8C00;
+}
+
+.treding-icon {
+    color: #5E97FF;
+}
+
+.book-item {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.book-item img {
+    object-fit: cover;
+    height: 240px;
+    transition: transform 0.3s ease;
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+}
+
+.book-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+@media (max-width: 1199px) {
+    .book-item img {
+        height: 195px;
+    }
+}
+
+@media (max-width: 991px) {
+    .book-item img {
+        height: 225px;
+    }
+}
+
+@media (max-width: 575px) {
+    .book-item img {
+        height: 321px;
+    }
+}
+
+@media (max-width: 490px) {
+    .book-item img {
+        height: 256px;
+    }
+}
+
+@media (max-width: 430px) {
+    .book-item img {
+        height: 230px;
+    }
+}

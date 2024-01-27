@@ -1,0 +1,86 @@
+create table books (
+	id int not null auto_increment,
+    title text not null,
+    image_url text not null,
+    book_description text not null,
+    book_source text,
+    state text not null,
+    primary key(id)
+);
+
+create table genres (
+    id int not null auto_increment,
+	book_id int not null,
+    genre text not null,
+);
+
+create table comments (
+    id int not null auto_increment,
+	book_id int not null,
+    content text not null,
+);
+
+create table ratings (
+	book_id int not null,
+	rating float not null,
+);
+
+create table authors (
+	id int not null auto_increment,
+    author text not null,
+	primary key(id)
+);
+
+create table writers (
+    id int not null auto_increment,
+	book_id int not null,
+    author_id int not null,
+);
+
+////////////////// add //////////////////////////////////
+
+-- Insert new author
+INSERT INTO authors (author) VALUES ('J.K. Rowling');
+-- Assuming the author_id is 1 (replace with the actual author_id)
+INSERT INTO books (title, image_url, book_description, book_source, state) 
+VALUES ('Harry Potter', 
+'https://bukovero.com/wp-content/uploads/2016/07/Harry_Potter_and_the_Cursed_Child_Special_Rehearsal_Edition_Book_Cover.jpg', 
+'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime illum non saepe minima nulla ipsum doloribus aspernatur commodi, voluptatum sint tempora esse, neque corrupti aliquid sequi. Officiis nostrum modi totam.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque aperiam, facilis harum obcaecati sed dolorem nostrum id! Quisquam perspiciatis ullam praesentium odit quibusdam veritatis mollitia dignissimos libero cupiditate autem!
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur nobis quod? Accusantium, esse ipsa quae culpa aperiam sint sunt nihil. Eveniet obcaecati, explicabo id vel facilis et quia sit?
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur atque ad maxime cumque? Cupiditate nobis, ipsam suscipit expedita esse exercitationem dolore voluptatibus quod voluptates molestiae debitis iste nisi distinctio.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corrupti placeat cumque voluptas velit quam officiis sit distinctio eum dolores deserunt saepe, optio consequuntur nisi mollitia pariatur iusto eos aliquam!
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil placeat aperiam quo voluptates voluptatum tenetur libero. Nam perspiciatis commodi illo. Perspiciatis odit maxime vero eius officia. Debitis explicabo nemo voluptatibus.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi rerum iure corporis, libero facilis beatae quam non, tenetur ullam doloribus sapiente dolore molestias porro dolores nesciunt soluta saepe velit?', 
+'google.com',
+'Full');
+-- Assuming the book_id is 1 (replace with the actual book_id)
+INSERT INTO genres (book_id, genre) VALUES (1, '[ "Fantasy", "Adventure", "Mystery" ]');
+-- Assuming the book_id is 1 (replace with the actual book_id)
+INSERT INTO comments (book_id, content) VALUES (1, 'Great book! Enjoyed reading it.');
+-- Assuming the book_id is 1 (replace with the actual book_id)
+INSERT INTO ratings (book_id, rating, votes) VALUES (1, 4, 10);
+-- Assuming the book_id is 1 and the author_id is 1 (replace with the actual values)
+INSERT INTO writers (book_id, author_id) VALUES (1, 1);
+
+////////////////// select //////////////////////////////////
+SELECT
+	books.id,
+    books.title,
+    books.image_url,
+    books.book_description,
+    books.book_source,
+    books.state,
+    authors.id,
+    authors.author,
+    ratings.rating,
+    ratings.votes,
+    comments.content AS comment,
+    genres.genre
+FROM
+    books
+LEFT JOIN ratings ON books.id = ratings.book_id
+LEFT JOIN comments ON books.id = comments.book_id
+LEFT JOIN genres ON books.id = genres.book_id
+LEFT JOIN writers ON books.id = writers.book_id
+LEFT JOIN authors ON writers.author_id = authors.id;

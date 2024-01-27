@@ -1,5 +1,43 @@
-{% extends 'layout.html' %}
+{% extends 'layout.html' %} {% block content %}
 
-{% block content %}
-<h1>Home page</h1>
+<img src="../static/img/banner3.png" alt="banner" class="banner" />
+
+
+
+<div class="container book-container">
+    <h2>
+        Hot book
+        <i class="fa-solid fa-fire hot-icon"></i>
+    </h2>
+    <div class="row">
+        {% for book in books %}
+        {% if book.id < 7 %} <div class="book-item col-6 col-lg-2 col-md-3 col-sm-4">
+            {% set url_title = book.title.replace(" ", "-") | lower %}
+            <a href="/{{url_title}}">
+                <img src="{{ book.image_url }}" width="100%" class="book-cover rounded" />
+                <h4 class="book-title">{{ book.title }}</h4>
+            </a>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+</div>
+<div class="container book-container">
+    <h2>
+        Trending book
+        <i class="fa-solid fa-arrow-trend-up treding-icon"></i>
+    </h2>
+    <div class="row">
+        {% for book in books %}
+        {% if book.id > 6 %}
+        {% set url_title = book.title.replace(" ", "-") | lower %}
+        <div class="book-item col-6 col-lg-2 col-md-3 col-sm-4">
+            <a href="/{{url_title}}">
+                <img src="{{ book.image_url }}" width="100%" class="book-cover rounded" />
+                <h4 class="book-title">{{ book.title }}</h4>
+            </a>
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+</div>
 {% endblock %}
