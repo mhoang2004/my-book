@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h3 class="mt-4">FAQs</h3>
+    <div class="url-pathname">
+        <a href="/" class="text-dark">
+            <i class="fa-solid fa-house mr-1"></i>Home</a> /
+        <a href="/faq" class="text-dark">FAQs</a>
+    </div>
+
+    <div class="fqa-wrapper py-4">
+        <div id="accordion">
+            <div class="card mb-4">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
+                            <b>Are online books compatible with different devices?</b>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        Yes, online books are designed to be compatible with various devices. Most e-books are
+                        accessible on e-readers, tablets, smartphones, and computers. Popular platforms provide apps
+                        that sync your reading progress across devices, allowing for a seamless reading experience.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            <b>What are the advantages of reading books online?</b>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        Reading books online offers several advantages, such as instant access to a vast library,
+                        adjustable font sizes for personalized reading, and the ability to carry an entire library on a
+                        single device. Online platforms often provide features like search functionality, annotations,
+                        and the ability to interact with other readers through comments and reviews.
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            <b>How do online book platforms handle user reviews and ratings?</b>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        Online book platforms often allow users to leave reviews and ratings for books they've read.
+                        These reviews can provide valuable insights for potential readers. However, it's important to
+                        consider factors such as the number of reviews, the credibility of reviewers, and the overall
+                        rating distribution when evaluating a book. Some platforms also use user reviews as part of
+                        their recommendation algorithms.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

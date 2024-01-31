@@ -10,26 +10,7 @@
         <i class="fa-solid fa-fire hot-icon"></i>
     </h2>
     <div class="row">
-        {% for book in books %}
-        {% if book.id < 7 %} <div class="book-item col-6 col-lg-2 col-md-3 col-sm-4">
-            {% set url_title = book.title.replace(" ", "-") | lower %}
-            <a href="/{{url_title}}">
-                <img src="{{ book.image_url }}" width="100%" class="book-cover rounded" />
-                <h4 class="book-title">{{ book.title }}</h4>
-            </a>
-    </div>
-    {% endif %}
-    {% endfor %}
-</div>
-</div>
-<div class="container book-container">
-    <h2>
-        Trending book
-        <i class="fa-solid fa-arrow-trend-up treding-icon"></i>
-    </h2>
-    <div class="row">
-        {% for book in books %}
-        {% if book.id > 6 %}
+        {% for book in hot_books %}
         {% set url_title = book.title.replace(" ", "-") | lower %}
         <div class="book-item col-6 col-lg-2 col-md-3 col-sm-4">
             <a href="/{{url_title}}">
@@ -37,7 +18,24 @@
                 <h4 class="book-title">{{ book.title }}</h4>
             </a>
         </div>
-        {% endif %} {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+<div class="container book-container">
+    <h2>
+        Trending book
+        <i class="fa-solid fa-arrow-trend-up treding-icon"></i>
+    </h2>
+    <div class="row">
+        {% for book in trending_book %}
+        {% set url_title = book.title.replace(" ", "-") | lower %}
+        <div class="book-item col-6 col-lg-2 col-md-3 col-sm-4">
+            <a href="/{{url_title}}">
+                <img src="{{ book.image_url }}" width="100%" class="book-cover rounded" />
+                <h4 class="book-title">{{ book.title }}</h4>
+            </a>
+        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

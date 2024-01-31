@@ -4,6 +4,14 @@ a.navbar-brand {
     margin-right: 2rem;
 }
 
+a {
+    color: #343a40;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .my-nav-item {
     margin: auto 1rem;
     border-radius: 0.7rem;
@@ -21,3 +29,4 @@ input.form-control {
     border-color: #000;
     box-shadow: 0 0 0 0.2rem rgba(72, 74, 76, 0.25);
 }
+

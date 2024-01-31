@@ -54,7 +54,8 @@
                     <span class="rating-content"></span>
                 </a>
 
-                <p>Rating: <b>{{book.rating | round(1) }}</b>/5.0 from <b>{{book.votes}}</b> people</p>
+                <p>Rating: <b>{{book.rating | round(1) }}</b>/5.0 from <b id="rating-votes">{{book.votes}}</b> people
+                </p>
             </div>
 
             <div class="book-decs cutoff-text">
@@ -69,15 +70,18 @@
             </div>
 
             <div class="text-center mt-5 reading-btn">
-                <a href="/{{url_title}}/reading" type="button" class="btn btn-primary">[ Start Reading ]</a>
-                <a href="/{{url_title}}/reading" type="button" class="btn btn-warning">Continue Reading</a>
+                <a href="/{{url_title}}/book-1" type="button" class="btn btn-primary">[ Start Reading ]</a>
+                <a href="/continue_reading/{{url_title}}" type="button" class="btn btn-warning">Continue Reading</a>
             </div>
         </div>
     </div>
 
     <!-- Comment section -->
     <div class="comment-header mt-5 mb-5">
-        <h2 class="display-5 mr-5"><b>{{book.comments | length}} Comments</b></h2>
+        <h2 class="display-5 mr-5">
+            <b id="comment-num">{{book.comments | length}}</b>
+            <b>Comments</b>
+        </h2>
         <div class="dropdown" title="Sort comments">
             <button class="cmt-sortby-btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -85,7 +89,9 @@
                 <span>Sort by</span>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <!-- Max of text -->
                 <a class="dropdown-item" href="#">Top comments</a>
+                <!-- Min of time -->
                 <a class="dropdown-item" href="#">Newest first</a>
             </div>
         </div>
@@ -97,30 +103,32 @@
         </div>
 
         <div class="comment-input-wrapper">
-            <input type="text" name="" placeholder="Add a comment...">
+            <input type="text" name="" placeholder="Add a comment..." required id="comment">
 
             <div class="comment-input-btns float-right mt-3">
                 <button type="button" class="btn" id="comment-cancel-btn">Cancle</button>
-                <button type="button" class="btn" id="comment-btn" disabled>Comment</button>
+                <button type="button" class="btn" id="comment-submit-btn" disabled>Comment</button>
             </div>
         </div>
     </div>
 
-    {% for comment in book.comments %}
-    <div class="comment-item mt-4">
-        <div>
-            <img src="../static/img/default-avt.jpg" width="44" height="44" alt="avt" class="cmt-avt">
-        </div>
+    <div class="comment-items" company_name="{{company_name}}">
+        {% for comment in book.comments %}
+        <div class="comment-item mt-4">
+            <div>
+                <img src="../static/img/default-avt.jpg" width="44" height="44" alt="avt" class="cmt-avt">
+            </div>
 
-        <div class="comment-input-wrapper">
-            <span><b>{{company_name}} User</b></span>
-            <span class="comment-time">2 weeks ago</span>
-            <p class="comment-content">
-                {{comment}}
-            </p>
+            <div class="comment-input-wrapper">
+                <span><b>{{company_name}} User</b></span>
+                <span class="comment-time">{{comment.time_ago}}</span>
+                <p class="comment-content">
+                    {{comment.content}}
+                </p>
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 
 {% endblock %}

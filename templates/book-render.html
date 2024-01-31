@@ -11,17 +11,30 @@
 
         <a href="/authors/{{url_author}}" class="text-dark">{{author}}</a>
     </div>
-    {% else %}
+    {% elif render == "genre" %}
     {% set url_genre = genre %}
     {% set genre = genre.replace("-", " ") | title %}
-    <h3 class="mt-4">BOOK GENRES: {{genre | upper}}</h3>
+    <h3 class="mt-4">BOOK GENRE: {{genre | upper}}</h3>
     <div class="url-pathname">
         <a href="/" class="text-dark">
             <i class="fa-solid fa-house" id="home-icon"></i>Home</a> /
         <a href="/genres/{{url_genre}}" class="text-dark">{{genre}}</a>
     </div>
+    {% elif render == "keyword" %}
+    <h3 class="mt-4">FIND BOOKS WITH THE KEYWORD: {{keyword | upper}}</h3>
+    <div class="url-pathname">
+        <a href="/" class="text-dark">
+            <i class="fa-solid fa-house" id="home-icon"></i>Home</a> /
+        <a href="/search?q=/{{keyword}}" class="text-dark">{{keyword}}</a>
+    </div>
+    {% elif render == "nothing" %}
+    <h3 class="mt-4">NOTHING WAS FOUND</h3>
+    <div id="nothing-was-found">
+        <img src="../static/img/no-data-found.png" alt="Nothing was found">
+    </div>
     {% endif %}
 
+    {% if render != "nothing" %}
     <div class="book-container">
 
         {% for book in books %}
@@ -31,7 +44,8 @@
                 <div class="book-info">
                     <h3>
                         <i class="fa-solid fa-book"></i>
-                        <a href="/">{{book.title}}</a>
+                        {% set url_title = book.title.replace(" ", "-") | lower %}
+                        <a href="/{{url_title}}">{{book.title}}</a>
                     </h3>
 
                     <span>
@@ -61,6 +75,6 @@
         </div>
         {% endfor %}
     </div>
-
+    {% endif %}
 </div>
 {% endblock %}

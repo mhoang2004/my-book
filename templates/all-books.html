@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h3 class="mt-4">ALL BOOKS</h3>
+    <div class="url-pathname">
+        <a href="/" class="text-dark">
+            <i class="fa-solid fa-house mr-1"></i>Home</a> /
+
+        <a href="/all-books" class="text-dark">All Books</a>
+    </div>
+
+    <div class="py-4 row">
+        {% for book in books %}
+        <div class="book-item col-6 col-lg-2 col-md-3 col-sm-4">
+            {% set url_title = book.title.replace(" ", "-") | lower %}
+            <a href="/{{url_title}}">
+                <img src="{{ book.image_url }}" width="100%" class="book-cover rounded" />
+                <h4 class="book-title text-dark">{{ book.title }}</h4>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}

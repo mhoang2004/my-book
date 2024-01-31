@@ -1,7 +1,56 @@
 {% extends 'layout.html' %} {% block content %}
 
+{% set title = book_url.replace("-", " ") | upper %}
 
-<div class="container book-container">
-    <embed src="../static/pdf/HPbooks/HarryPotter1.pdf" width="100%" height="2100px" />
+<div class="container">
+    <div class="reading-header text-center" data-page="{{ page }}">
+        <h3>{{title}}</h3>
+        <span id="book-page" class="text-mute">Book {{page}}</span>
+    </div>
+
+    <!-- /pdf/harry-potters/harry-potter -->
+    <div class="reading-wrapper text-center py-2">
+        {% if page == 1 %}
+        <button id="prior-btn" class="btn btn-outline-dark" disabled>
+            <i class="fa-solid fa-angle-left"></i> Prior book
+        </button>
+        {% else %}
+        <a href="/{{book_url}}/book-{{ page - 1}}">
+            <button id="prior-btn" class="btn btn-outline-dark">
+                <i class="fa-solid fa-angle-left"></i> Prior book
+            </button>
+        </a>
+        {% endif %}
+
+        <div class="dropdown d-inline-block">
+            <button class="btn btn-outline-dark dropdown-toggle p-2 px-4" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for i in range(max_page) %}
+                <a class="dropdown-item" href="/{{book_url}}/book-{{i+1}}">Book {{i+1}}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% if page == max_page %}
+        <button id="next-btn" class="btn btn-outline-dark" disabled>
+            Next book
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+        {% else %}
+        <a href="/{{book_url}}/book-{{ page + 1}}">
+            <button id="next-btn" class="btn btn-outline-dark">
+                Next book
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
+        </a>
+        {% endif %}
+
+
+    </div>
+
+    <iframe src="../static/pdf/{{book_url}}-books/{{book_url}}-{{page}}.pdf" width="100%"></iframe>
 </div>
 {% endblock %}

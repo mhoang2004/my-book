@@ -1,0 +1,10 @@
+.about-wrapper {
+    text-align: center;
+}
+
+.about-wrapper p {
+    text-align: left;
+    padding-top: 5px;
+    line-height: 2rem;
+    font-size: 18px;
+}

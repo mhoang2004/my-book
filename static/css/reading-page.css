@@ -1,0 +1,31 @@
+iframe {
+    height: 100vh;
+}
+
+/* .btn-wrapper {
+    display: flex;
+    align-items: center;
+} */
+
+#book-page {
+    font-size: 1.3rem;
+}
+
+.reading-wrapper button {
+    padding: .5rem 2rem;
+}
+
+.dropdown-toggle::after  {
+    display: none;
+}
+
+.dropdown-menu.show {
+    left: -75% !important;
+
+}
+
+@media (max-width: 475px) {
+    .reading-wrapper button {
+        padding: .4rem 1rem;
+    }
+}

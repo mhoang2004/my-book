@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h3 class="mt-4">ALL GENRES</h3>
+    <div class="url-pathname">
+        <a href="/" class="text-dark">
+            <i class="fa-solid fa-house mr-1"></i>Home</a> /
+
+        <a href="/all-genres" class="text-dark">All Genres</a>
+    </div>
+
+
+    <div class="py-4 row">
+        {% for genre in genres %}
+        <div class="col-4 py-3">
+            {% set url_genre = genre.replace(" ", "-") | lower %}
+            <a href="/genres/{{url_genre}}" class="text-dark py-2 px-3">{{genre}}</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

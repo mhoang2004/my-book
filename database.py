@@ -2,6 +2,8 @@ from MySQLdb.cursors import DictCursor
 import MySQLdb
 import os
 from dotenv import load_dotenv
+# from algorithm import longest_common_subsequence
+
 load_dotenv()
 
 
@@ -77,12 +79,27 @@ def load_book_from_db(book_url):
         genres = [a['genre'] for a in cursor.fetchall()]
 
         # get comments
-        query = "SELECT content from books JOIN comments on book_id = books.id WHERE books.id = %s LIMIT 10;"
+        query = """
+        SELECT content, 
+        CASE
+        WHEN TIMESTAMPDIFF(SECOND, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 60 THEN
+            CONCAT(TIMESTAMPDIFF(SECOND, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' seconds ago')
+        WHEN TIMESTAMPDIFF(MINUTE, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 60 THEN
+            CONCAT(TIMESTAMPDIFF(MINUTE, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' minutes ago')
+        WHEN TIMESTAMPDIFF(HOUR, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 24 THEN
+            CONCAT(TIMESTAMPDIFF(HOUR, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' hours ago')
+        WHEN TIMESTAMPDIFF(DAY, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 30 THEN
+            CONCAT(TIMESTAMPDIFF(DAY, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' days ago')
+        WHEN TIMESTAMPDIFF(MONTH, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 12 THEN
+            CONCAT(TIMESTAMPDIFF(MONTH, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' months ago')
+        ELSE
+            CONCAT(TIMESTAMPDIFF(YEAR, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' years ago')
+        END AS time_ago
+        from books JOIN comments on book_id = books.id WHERE books.id = %s ORDER BY time DESC LIMIT 10;"""
         cursor.execute(query, (id,))
-        comments = [a['content'] for a in cursor.fetchall()]
+        comments = cursor.fetchall()
 
         # get ratings
-        # use AVG function of mysql
         query = "SELECT AVG(rating) AS rating, COUNT(rating) AS votes from books JOIN ratings on book_id = books.id WHERE books.id = %s"
         cursor.execute(query, (id,))
         ratings = cursor.fetchall()[0]
@@ -135,6 +152,32 @@ def add_rating_to_db(book_id, rating):
             connection.close()
 
 
+def add_comment_to_db(book_id, content):
+    connection = None
+    cursor = None
+
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        # get info of the book
+        query = "INSERT INTO comments (book_id, content, time) VALUES (%s, %s, CONVERT_TZ(NOW(), 'UTC', '+07:00'));"
+        cursor.execute(query, (book_id, content))
+
+        # for row in results:
+        # print(row) # Do something with the retrieved data
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+
+
 def load_book_from_db_author(author):
     connection = None
     cursor = None
@@ -153,8 +196,6 @@ def load_book_from_db_author(author):
 
         for title in titles:
             books.append(load_book_from_db(title))
-
-        print(titles)
 
         return books
         # for row in results:
@@ -194,6 +235,181 @@ def load_book_from_db_genre(genre):
         # for row in results:
         # print(row) # Do something with the retrieved data
 
+    except Exception as e:
+        print(f"Error: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+
+
+def load_book_from_db_keyword(keyword):
+    connection = None
+    cursor = None
+    keyword = '%'+keyword.lower()+'%'
+
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        # search query
+        query = "SELECT title FROM books JOIN writers ON books.id = writers.book_id JOIN authors ON writers.author_id = authors.id  WHERE LOWER(author) LIKE %s OR LOWER(title) LIKE %s"
+        cursor.execute(query, (keyword, keyword))
+        titles = (a['title'] for a in cursor.fetchall())
+
+        books = []
+
+        for title in titles:
+            books.append(load_book_from_db(title))
+
+        return books
+        # for row in results:
+        # print(row) # Do something with the retrieved data
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+
+
+def load_genres_from_db():
+    connection = None
+    cursor = None
+
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        # search query
+        query = "SELECT genre FROM genres GROUP BY genre"
+        cursor.execute(query)
+        genres = (a['genre'] for a in cursor.fetchall())
+
+        return genres
+        # for row in results:
+        # print(row) # Do something with the retrieved data
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+
+
+def load_hot_books_from_db():
+    connection = None
+    cursor = None
+
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        query = """
+            SELECT
+                books.id,
+                title, 
+                image_url,
+                AVG(rating) AS average_rating
+            FROM
+                books
+            LEFT JOIN
+                ratings ON books.id = ratings.book_id
+            GROUP BY
+                books.id, title, image_url
+            ORDER BY
+                average_rating DESC
+            LIMIT 6;
+        """
+
+        cursor.execute(query)
+        results = cursor.fetchall()
+
+        # for row in results:
+        # print(row) # Do something with the retrieved data
+
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+
+
+def load_trending_books_from_db():
+    connection = None
+    cursor = None
+
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        query = """
+            SELECT
+                books.id,
+                title, 
+                image_url,
+                COUNT(*) AS comments_num
+            FROM
+                books
+            LEFT JOIN
+                comments ON books.id = comments.book_id
+            GROUP BY
+                books.id, title, image_url
+            ORDER BY
+                comments_num DESC
+            LIMIT 6;
+        """
+
+        cursor.execute(query)
+        results = cursor.fetchall()
+
+        # for row in results:
+        # print(row) # Do something with the retrieved data
+
+        return results
+    except Exception as e:
+        print(f"Error: {e}")
+
+    finally:
+        # Close the cursor and connection when done
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+
+
+def load_max_page_from_db(book_url):
+    connection = None
+    cursor = None
+    title = book_url.replace("-", " ").title()
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        query = "select books_num from books where title = %s"
+        cursor.execute(query, (title,))
+        results = cursor.fetchall()[0]["books_num"]
+
+        # for row in results:
+        # print(row) # Do something with the retrieved data
+
+        return results
     except Exception as e:
         print(f"Error: {e}")
 
