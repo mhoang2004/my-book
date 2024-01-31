@@ -39,7 +39,7 @@ def reading_a_new_book(book_url, page):
 def continue_reading(book_url):
     page = 1
     if book_url in session:
-        page = session["name"]
+        page = session[book_url]
 
     return redirect(f'/{book_url}/book-{page}')
 

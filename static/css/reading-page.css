@@ -15,11 +15,11 @@ iframe {
     padding: .5rem 2rem;
 }
 
-.dropdown-toggle::after  {
+.reading-wrapper .dropdown .dropdown-toggle::after  {
     display: none;
 }
 
-.dropdown-menu.show {
+.reading-wrapper .dropdown-menu.show {
     left: -75% !important;
 
 }
