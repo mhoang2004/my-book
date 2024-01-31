@@ -298,16 +298,3 @@ def load_from_database(id=-1):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
