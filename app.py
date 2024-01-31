@@ -37,8 +37,10 @@ def reading_a_new_book(book_url, page):
 
 @app.route("/continue_reading/<book_url>")
 def continue_reading(book_url):
-    page = session[book_url]
-    page = page if page != None else 1
+    page = 1
+    if book_url in session:
+        page = session["name"]
+
     return redirect(f'/{book_url}/book-{page}')
 
 
