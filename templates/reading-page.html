@@ -51,6 +51,12 @@
 
     </div>
 
-    <iframe src="../static/pdf/{{book_url}}-books/{{book_url}}-{{page}}.pdf" width="100%"></iframe>
+    <div class="book-content">
+        {% for page in content %}
+        <!-- <div>Page {{ page.number }}</div> -->
+        <div>{{ page.text }}</div>
+        <br>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

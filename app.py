@@ -3,6 +3,8 @@ from flask import Flask, render_template, request, jsonify, session, redirect
 from database import load_books_from_db, load_book_from_db, load_book_from_db_author, load_book_from_db_genre, load_book_from_db_keyword
 from database import add_rating_to_db, add_comment_to_db
 from database import load_genres_from_db, load_hot_books_from_db, load_trending_books_from_db, load_max_page_from_db
+from pdf_to_html import pdf_to_html
+
 app = Flask(__name__)
 
 COMPANY_NAME = "MyBooks"
@@ -31,8 +33,10 @@ def book_detail(book_url):
 @app.route("/<book_url>/book-<int:page>")
 def reading_a_new_book(book_url, page):
     max_page = load_max_page_from_db(book_url)
+    content = pdf_to_html(
+        f"./static/pdf/{book_url}-books/{book_url}-{page}.pdf")
     session[book_url] = page
-    return render_template('reading-page.html', name='reading-page', company_name=COMPANY_NAME, book_url=book_url, page=page, max_page=max_page)
+    return render_template('reading-page.html', name='reading-page', company_name=COMPANY_NAME, content=content, book_url=book_url, page=page, max_page=max_page)
 
 
 @app.route("/continue_reading/<book_url>")
@@ -154,8 +158,8 @@ if __name__ == "__main__":
 # continue reading, must storage page and section of Flask
 # footer
 # handle if not exist
+# deploy
 # TODO sort book comment,
 # TODO filter function
 # TODO 404 error
-# TODO deploy
 # ? play music when reading book

@@ -4,14 +4,6 @@ a.navbar-brand {
     margin-right: 2rem;
 }
 
-a {
-    color: #343a40;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
 .my-nav-item {
     margin: auto 1rem;
     border-radius: 0.7rem;

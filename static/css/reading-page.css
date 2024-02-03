@@ -1,5 +1,14 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 26px;
+}
+
 iframe {
     height: 100vh;
+}
+
+.fixed-top {
+    position: absolute !important;
 }
 
 /* .btn-wrapper {
