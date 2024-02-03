@@ -279,22 +279,3 @@ def load_from_database(id=-1):
         for book in BOOKS:
             if book["id"] == id:
                 return book
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
