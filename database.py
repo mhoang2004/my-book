@@ -14,10 +14,10 @@ def get_db_connection():
         passwd=os.getenv("DATABASE_PASSWORD"),
         db=os.getenv("DATABASE"),
         autocommit=True,
-        ssl_mode="VERIFY_IDENTITY",
+        ssl_mode="REQUIRED",
         cursorclass=DictCursor,
         ssl={
-            "ssl_ca": "/etc/ssl/cert.pem"
+            "ssl": "/etc/ssl/cert.pem"
         }
     )
 
@@ -82,18 +82,18 @@ def load_book_from_db(book_url):
         query = """
         SELECT content, 
         CASE
-        WHEN TIMESTAMPDIFF(SECOND, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 60 THEN
-            CONCAT(TIMESTAMPDIFF(SECOND, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' seconds ago')
-        WHEN TIMESTAMPDIFF(MINUTE, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 60 THEN
-            CONCAT(TIMESTAMPDIFF(MINUTE, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' minutes ago')
-        WHEN TIMESTAMPDIFF(HOUR, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 24 THEN
-            CONCAT(TIMESTAMPDIFF(HOUR, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' hours ago')
-        WHEN TIMESTAMPDIFF(DAY, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 30 THEN
-            CONCAT(TIMESTAMPDIFF(DAY, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' days ago')
-        WHEN TIMESTAMPDIFF(MONTH, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')) < 12 THEN
-            CONCAT(TIMESTAMPDIFF(MONTH, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' months ago')
+        WHEN TIMESTAMPDIFF(SECOND, time, NOW()) < 60 THEN
+            CONCAT(TIMESTAMPDIFF(SECOND, time, NOW()), ' seconds ago')
+        WHEN TIMESTAMPDIFF(MINUTE, time, NOW()) < 60 THEN
+            CONCAT(TIMESTAMPDIFF(MINUTE, time, NOW()), ' minutes ago')
+        WHEN TIMESTAMPDIFF(HOUR, time, NOW()) < 24 THEN
+            CONCAT(TIMESTAMPDIFF(HOUR, time, NOW()), ' hours ago')
+        WHEN TIMESTAMPDIFF(DAY, time, NOW()) < 30 THEN
+            CONCAT(TIMESTAMPDIFF(DAY, time, NOW()), ' days ago')
+        WHEN TIMESTAMPDIFF(MONTH, time, NOW()) < 12 THEN
+            CONCAT(TIMESTAMPDIFF(MONTH, time, NOW()), ' months ago')
         ELSE
-            CONCAT(TIMESTAMPDIFF(YEAR, time, CONVERT_TZ(NOW(), 'UTC', '+07:00')), ' years ago')
+            CONCAT(TIMESTAMPDIFF(YEAR, time, NOW()), ' years ago')
         END AS time_ago
         from books JOIN comments on book_id = books.id WHERE books.id = %s ORDER BY time DESC LIMIT 10;"""
         cursor.execute(query, (id,))

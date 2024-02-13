@@ -8,8 +8,15 @@
         <span id="book-page" class="text-mute">Book {{page}}</span>
     </div>
 
-    <!-- /pdf/harry-potters/harry-potter -->
+    <div class="audio-container text-center">
+        <audio controls loop autoplay>
+            <source src="../static/audio/ATownWithAnOceanViewPiano-JoeHisaishi-2843646.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
     <div class="reading-wrapper text-center py-2">
+
         {% if page == 1 %}
         <button id="prior-btn" class="btn btn-outline-dark" disabled>
             <i class="fa-solid fa-angle-left"></i> Prior book
@@ -47,8 +54,6 @@
             </button>
         </a>
         {% endif %}
-
-
     </div>
 
     <div class="book-content">
