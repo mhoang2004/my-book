@@ -1,5 +1,6 @@
 {% extends 'layout.html' %} {% block content %}
 {% set url_title = book.title.replace(" ", "-") | lower %}
+
 <div class="container">
     <h3 class="mt-4">BOOK INFORMATION</h3>
     <div class="url-pathname">
@@ -9,7 +10,6 @@
         <a href="/{{url_title}}" class="text-dark">{{book.title}}</a>
     </div>
 
-
     <div class="row mt-5 ">
         <div class="col-12 col-lg-4 col-md-12 col-sm-12">
             <img width="100%" src="{{book.image_url}}" alt="book-cover" class="book-cover">
@@ -17,8 +17,8 @@
             <div class="book-info mt-3">
                 <p>
                     <b>Author:</b>
+
                     {% for author in book.authors %}
-                    <!-- for url name -->
                     {% set url_author = author.replace(" ", "-") | lower %}
 
                     <a href="/authors/{{url_author}}" class="text-dark">{{author}}</a>{% if not loop.last%}, {% endif %}

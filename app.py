@@ -35,6 +35,7 @@ def reading_a_new_book(book_url, page):
     max_page = load_max_page_from_db(book_url)
     content = pdf_to_html(
         f"./static/pdf/{book_url}-books/{book_url}-{page}.pdf")
+
     session[book_url] = page
 
     print(page, max_page)
@@ -166,4 +167,3 @@ if __name__ == "__main__":
 # TODO filter function
 # TODO 404 error
 # ? play music when reading book
-

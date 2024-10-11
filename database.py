@@ -398,6 +398,9 @@ def load_max_page_from_db(book_url):
     connection = None
     cursor = None
     title = book_url.replace("-", " ").title()
+
+    print("title", title)
+
     try:
         connection = get_db_connection()
         cursor = connection.cursor()
