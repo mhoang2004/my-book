@@ -13,6 +13,7 @@ def get_db_connection():
         user=os.getenv("DATABASE_USERNAME"),
         passwd=os.getenv("DATABASE_PASSWORD"),
         db=os.getenv("DATABASE"),
+        port=int(os.getenv("DATABASE_PORT", 3306)),
         autocommit=True,
         ssl_mode="REQUIRED",
         cursorclass=DictCursor,
